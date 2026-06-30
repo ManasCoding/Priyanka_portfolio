@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { ArrowUpRight, ExternalLink } from "lucide-react";
 
-const easing: [number, number, number, number] = [0.22, 1, 0.36, 1];
+const easing = [0.22, 1, 0.36, 1];
 
 const projects = [
   {
@@ -47,6 +47,7 @@ const projects = [
   },
 ];
 
+const Marquee = () => {
   const items = ["Logo Design", "Brand Identity", "Social Media", "UI/UX Design", "Poster Design", "Motion Graphics", "Packaging", "Web Design"];
   const doubled = [...items, ...items];
   return (

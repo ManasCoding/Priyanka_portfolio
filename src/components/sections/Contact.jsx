@@ -5,19 +5,19 @@ import { Send, CheckCircle2, Loader2, Mail, MessageSquare } from "lucide-react";
 const projectTypes = ["UI/UX Design", "Mobile App", "Web Design", "Design System", "Branding", "Consultation"];
 const budgetRanges = ["< $5K", "$5K – $15K", "$15K – $50K", "$50K+"];
 
-type FormState = "idle" | "loading" | "success";
+
 
 export const Contact = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
-  const [formState, setFormState] = useState<FormState>("idle");
+  const [formState, setFormState] = useState("idle");
   const [form, setForm] = useState({
     name: "", email: "", projectType: "", budget: "", message: "",
   });
-  const [errors, setErrors] = useState<Partial<typeof form>>({});
+  const [errors, setErrors] = useState({});
 
   const validate = () => {
-    const newErrors: Partial<typeof form> = {};
+    const newErrors = {};
     if (!form.name.trim()) newErrors.name = "Name is required";
     if (!form.email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) newErrors.email = "Valid email required";
     if (!form.projectType) newErrors.projectType = "Please select a project type";
@@ -25,7 +25,7 @@ export const Contact = () => {
     return newErrors;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     const errs = validate();
     if (Object.keys(errs).length > 0) {
@@ -37,7 +37,7 @@ export const Contact = () => {
     setTimeout(() => setFormState("success"), 2000);
   };
 
-  const handleChange = (field: keyof typeof form, value: string) => {
+  const handleChange = (field, value) => {
     setForm((f) => ({ ...f, [field]: value }));
     if (errors[field]) setErrors((e) => ({ ...e, [field]: undefined }));
   };

@@ -50,7 +50,7 @@ export const Testimonials = () => {
     return () => clearInterval(timer);
   }, []);
 
-  const go = (dir: number) => {
+  const go = (dir) => {
     setCurrent((c) => (c + dir + testimonials.length) % testimonials.length);
   };
 

@@ -7,19 +7,19 @@ export const CustomCursor = () => {
   const [isClicking, setIsClicking] = useState(false);
 
   useEffect(() => {
-    const updatePosition = (e: MouseEvent) => {
+    const updatePosition = (e) => {
       setPosition({ x: e.clientX, y: e.clientY });
     };
 
-    const handleMouseEnter = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
+    const handleMouseEnter = (e) => {
+      const target = e.target;
       if (target.matches('a, button, [data-cursor="hover"]')) {
         setIsHovering(true);
       }
     };
 
-    const handleMouseLeave = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
+    const handleMouseLeave = (e) => {
+      const target = e.target;
       if (target.matches('a, button, [data-cursor="hover"]')) {
         setIsHovering(false);
       }

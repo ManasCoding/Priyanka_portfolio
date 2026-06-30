@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
-const easing: [number, number, number, number] = [0.22, 1, 0.36, 1];
+const easing = [0.22, 1, 0.36, 1];
 
 const skills = [
   { name: "Canva", level: 95, category: "Design Tools" },
@@ -20,7 +20,7 @@ const skills = [
 
 const categories = ["Design Tools", "Graphic Design", "Motion & Video", "Digital Design"];
 
-const categoryColors: Record<string, string> = {
+const categoryColors = {
   "Design Tools": "#6C63FF",
   "Graphic Design": "#FFD700",
   "Motion & Video": "#00C9A7",

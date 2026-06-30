@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Search, PenLine, Palette, PlayCircle, CheckCircle2, Rocket } from "lucide-react";
 
-const easing: [number, number, number, number] = [0.22, 1, 0.36, 1];
+const easing = [0.22, 1, 0.36, 1];
 
 const steps = [
   {

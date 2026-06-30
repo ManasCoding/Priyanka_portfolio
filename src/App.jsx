@@ -6,6 +6,7 @@ import { LoadingScreen } from "./components/layout/LoadingScreen";
 import { CustomCursor } from "./components/layout/CustomCursor";
 import { Navbar } from "./components/layout/Navbar";
 import { Footer } from "./components/layout/Footer";
+import { FloatingIcons } from "./components/ui/FloatingIcons";
 
 // Sections
 import { Hero } from "./components/sections/Hero";
@@ -25,7 +26,7 @@ function App() {
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     });
 
-    function raf(time: number) {
+    function raf(time) {
       lenis.raf(time);
       requestAnimationFrame(raf);
     }
@@ -61,6 +62,7 @@ function App() {
           <Contact />
         </main>
         <Footer />
+        <FloatingIcons />
       </div>
     </>
   );

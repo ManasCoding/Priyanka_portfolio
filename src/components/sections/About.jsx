@@ -9,13 +9,13 @@ const stats = [
   { value: "100%", label: "Client Dedication", icon: Users },
 ];
 
-const easing: [number, number, number, number] = [0.22, 1, 0.36, 1];
+const easing = [0.22, 1, 0.36, 1];
 
 export const About = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  const fadeUp = (delay: number) => ({
+  const fadeUp = (delay) => ({
     initial: { y: 40, opacity: 0 },
     animate: isInView ? { y: 0, opacity: 1 } : { y: 40, opacity: 0 },
     transition: { duration: 0.7, delay, ease: easing },

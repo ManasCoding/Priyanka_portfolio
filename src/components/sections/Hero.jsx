@@ -5,7 +5,7 @@ import { ArrowRight, Download, MapPin, Sparkles } from "lucide-react";
 const typingTexts = ["UI/UX Designer", "Graphic Designer", "Creative Designer", "Brand Identity Expert"];
 
 // Floating particle component
-const Particle = ({ x, y, delay }: { x: number; y: number; delay: number }) => (
+const Particle = ({ x, y, delay }) => (
   <motion.div
     className="absolute h-1 w-1 rounded-full bg-accent/40"
     style={{ left: `${x}%`, top: `${y}%` }}
@@ -26,7 +26,7 @@ export const Hero = () => {
   const [isDeleting, setIsDeleting] = useState(false);
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
-  const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef(null);
 
   const springX = useSpring(mouseX, { stiffness: 50, damping: 20 });
   const springY = useSpring(mouseY, { stiffness: 50, damping: 20 });
@@ -36,7 +36,7 @@ export const Hero = () => {
   // Typing animation
   useEffect(() => {
     const current = typingTexts[typingIndex];
-    let timeout: ReturnType<typeof setTimeout>;
+    let timeout;
     if (!isDeleting && displayText.length < current.length) {
       timeout = setTimeout(() => setDisplayText(current.slice(0, displayText.length + 1)), 100);
     } else if (!isDeleting && displayText.length === current.length) {
@@ -50,17 +50,17 @@ export const Hero = () => {
     return () => clearTimeout(timeout);
   }, [displayText, isDeleting, typingIndex]);
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleMouseMove = (e) => {
     if (!containerRef.current) return;
     const { left, top, width, height } = containerRef.current.getBoundingClientRect();
     mouseX.set(e.clientX - left - width / 2);
     mouseY.set(e.clientY - top - height / 2);
   };
 
-  const fadeUp = (delay: number) => ({
+  const fadeUp = (delay) => ({
     initial: { y: 40, opacity: 0 },
     animate: { y: 0, opacity: 1 },
-    transition: { duration: 0.8, delay, ease: "easeOut" as const },
+    transition: { duration: 0.8, delay, ease: "easeOut" },
   });
 
   return (

@@ -2,18 +2,14 @@ import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { cn } from "../../lib/utils";
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "primary" | "secondary" | "outline" | "ghost";
-  size?: "sm" | "md" | "lg";
-  magnetic?: boolean;
-}
 
-export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+
+export const Button = React.forwardRef(
   ({ className, variant = "primary", size = "md", magnetic = true, children, ...props }, _ref) => {
-    const buttonRef = useRef<HTMLButtonElement>(null);
+    const buttonRef = useRef(null);
     const [position, setPosition] = useState({ x: 0, y: 0 });
 
-    const handleMouseMove = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const handleMouseMove = (e) => {
       if (!magnetic || !buttonRef.current) return;
       const { clientX, clientY } = e;
       const { width, height, left, top } = buttonRef.current.getBoundingClientRect();
