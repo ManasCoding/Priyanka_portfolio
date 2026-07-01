@@ -7,9 +7,9 @@ const easing = [0.22, 1, 0.36, 1];
 const projects = [
   {
     id: 1,
-    title: "Zenin Brand Identity Suite",
+    title: "Zixin Brand Identity Suite",
     category: "Branding · Logo & Collateral",
-    desc: "Complete brand identity package for Zenin India Software — logo design, visiting cards, letterheads, brochures, and a comprehensive social media kit used across all platforms.",
+    desc: "Complete brand identity package for Zixin India Software — logo design, visiting cards, letterheads, brochures, and a comprehensive social media kit used across all platforms.",
     tags: ["Photoshop", "CorelDRAW", "Branding", "Print"],
     color: "from-blue-500/20 to-purple-500/20",
     accent: "#6C63FF",
@@ -17,7 +17,7 @@ const projects = [
   },
   {
     id: 2,
-    title: "Bargha Tech Marketing Campaign",
+    title: "Barsha Tech Marketing Campaign",
     category: "Social Media · Motion Graphics",
     desc: "Designed a full-suite marketing campaign including animated social media posts, promotional banners, video reels, and presentation decks that boosted online engagement.",
     tags: ["Canva", "Motion", "Social Media", "Video"],

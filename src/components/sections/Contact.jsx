@@ -34,7 +34,29 @@ export const Contact = () => {
     }
     setErrors({});
     setFormState("loading");
-    setTimeout(() => setFormState("success"), 2000);
+
+    // Build WhatsApp message from form data
+    const whatsappNumber = "916370459553";
+    const messageParts = [
+      `👋 Hi Priyanka!`,
+      ``,
+      `*Name:* ${form.name}`,
+      `*Email:* ${form.email}`,
+      `*Project Type:* ${form.projectType}`,
+      form.budget ? `*Budget Range:* ${form.budget}` : null,
+      ``,
+      `*Message:*`,
+      form.message,
+    ].filter(Boolean);
+
+    const whatsappMessage = encodeURIComponent(messageParts.join("\n"));
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+
+    // Short delay for UX feedback, then redirect
+    setTimeout(() => {
+      window.open(whatsappUrl, "_blank");
+      setFormState("success");
+    }, 1000);
   };
 
   const handleChange = (field, value) => {

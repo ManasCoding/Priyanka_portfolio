@@ -5,7 +5,7 @@ import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 const testimonials = [
   {
     name: "Rahul Mishra",
-    role: "Director, Zenin India Software Pvt. Ltd.",
+    role: "Director, Zixin India Software Pvt. Ltd.",
     quote: "Priyanka's design work transformed our brand presence completely. From our logo to social media — everything she delivered was professional, creative, and exactly what we needed. A truly dedicated designer.",
     rating: 5,
     avatar: "RM",
@@ -13,7 +13,7 @@ const testimonials = [
   },
   {
     name: "Sneha Patnaik",
-    role: "CEO, Bargha Tech Pvt. Ltd.",
+    role: "CEO, Barsha Tech Pvt. Ltd.",
     quote: "Working with Priyanka was a fantastic experience. Her motion graphics and video editing skills brought our marketing campaigns to life. She understands brand storytelling like no one else.",
     rating: 5,
     avatar: "SP",

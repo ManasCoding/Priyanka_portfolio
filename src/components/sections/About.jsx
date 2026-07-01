@@ -98,8 +98,8 @@ export const About = () => {
               <div className="space-y-4">
                 {[
                   { role: "UI/UX & Graphic Designer", company: "OdiTech Global Pvt. Ltd.", period: "May 2026–Present" },
-                  { role: "UI & Graphic Designer", company: "Bargha Tech Pvt. Ltd.", period: "Nov 2025–May 2026" },
-                  { role: "UI & Graphic Designer", company: "Zenin India Software Pvt. Ltd.", period: "Nov 2024–Nov 2025" },
+                  { role: "UI & Graphic Designer", company: "Barsha Tech Pvt. Ltd.", period: "Nov 2025–May 2026" },
+                  { role: "UI & Graphic Designer", company: "Zixin India Software Pvt. Ltd.", period: "Nov 2024–Nov 2025" },
                 ].map((exp) => (
                   <div key={exp.role} className="flex items-start justify-between">
                     <div>
