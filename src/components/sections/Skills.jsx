@@ -22,15 +22,9 @@ const categoryColors = {
   "UI/UX & Web Design": "#F59E0B", // Amber 500
 };
 
-const baseSkills = [
-  { name: "Figma", category: "Design Tools", iconSrc: figmaIcon, bgColor: "#F24E1E" },
-  { name: "Adobe Photoshop", category: "Design Tools", iconSrc: photoshopIcon, bgColor: "#31A8FF" },
-  { name: "Illustrator", category: "Design Tools", iconSrc: illustratorIcon, bgColor: "#FF9A00" },
-  { name: "CorelDRAW", category: "Design Tools", iconSrc: coreldrawIcon, bgColor: "#22C55E" },
-  { name: "Canva", category: "Design Tools", iconSrc: canvaIcon, bgColor: "#00C4CC" },
-];
+const baseSkills = [];
 
-const allSkills = [...baseSkills, ...createdLogos];
+const allSkills = [...createdLogos];
 
 // Helper to create a long enough row for seamless looping on wide screens
 const createRow = (skillsArray) => {
@@ -80,17 +74,10 @@ const IconWrapper = ({ skill, index }) => {
 
   return (
     <motion.div
-      className="relative flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-full cursor-pointer group shadow-lg overflow-hidden"
-      style={{
-        background: `rgba(255, 255, 255, 0.02)`,
-        backdropFilter: "blur(16px)",
-        border: `1px solid ${glowColor}30`,
-        boxShadow: `0 0 20px ${glowColor}15, inset 0 0 15px ${glowColor}10`,
-      }}
+      className="relative flex items-center justify-center w-24 h-24 sm:w-32 sm:h-32 rounded-2xl cursor-pointer group transition-all"
       whileHover={{ 
-        scale: 1.15,
-        borderColor: `${glowColor}80`,
-        boxShadow: `0 0 40px ${glowColor}50, inset 0 0 25px ${glowColor}30`,
+        scale: 2.2,
+        zIndex: 50,
         transition: { duration: 0.3 }
       }}
       animate={{ y: yOffset }}
@@ -103,16 +90,16 @@ const IconWrapper = ({ skill, index }) => {
       }}
     >
       <div 
-        className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" 
-        style={{ background: `radial-gradient(circle at center, ${glowColor}40 0%, transparent 70%)` }} 
+        className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" 
+        style={{ background: `radial-gradient(circle at center, ${glowColor}30 0%, transparent 70%)` }} 
       />
       
       {skill.iconSrc ? (
         <img 
           src={skill.iconSrc} 
           alt={skill.name || "Logo"} 
-          className="w-10 h-10 sm:w-12 sm:h-12 object-contain relative z-10 transition-transform duration-300 group-hover:scale-110" 
-          style={{ filter: `drop-shadow(0 0 12px ${glowColor}60)` }} 
+          className="w-16 h-16 sm:w-24 sm:h-24 object-contain relative z-10 transition-transform duration-300 group-hover:scale-125" 
+          style={{ filter: `drop-shadow(0 0 15px ${glowColor}60)` }} 
         />
       ) : null}
     </motion.div>
