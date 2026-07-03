@@ -1,11 +1,20 @@
 import { motion } from "framer-motion";
 import { ExternalLink, Mail, Code2, Rss, ArrowUp } from "lucide-react";
 
+const InstagramIcon = ({ size = 24, className = "" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+  </svg>
+);
+
 const socialLinks = [
   { icon: Code2, href: "#", label: "GitHub" },
   { icon: Rss, href: "#", label: "Twitter" },
   { icon: ExternalLink, href: "#", label: "LinkedIn" },
   { icon: Mail, href: "#", label: "Dribbble" },
+  { icon: InstagramIcon, href: "#", label: "Instagram" },
 ];
 
 const quickLinks = [
@@ -74,10 +83,10 @@ export const Footer = () => {
             </h3>
             <div className="flex flex-col gap-3">
               <a
-                href="mailto:pandapriyanka151@gmail.com"
+                href="mailto:pandapriyanka181@gmail.com"
                 className="text-white/60 hover:text-accent transition-colors text-sm"
               >
-                pandapriyanka151@gmail.com
+                pandapriyanka181@gmail.com
               </a>
               <p className="text-white/40 text-sm">Available for freelance projects</p>
               <div className="mt-2 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-3 py-1.5 text-xs text-accent">
@@ -89,8 +98,8 @@ export const Footer = () => {
         </div>
 
         <div className="mt-16 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-white/10 pt-8">
-          <p className="text-white/30 text-xs">
-            © 2026 Priyanka Panda. Designed & Built with ❤️
+          <p className="text-white/30 text-xs text-center sm:text-left">
+            © {new Date().getFullYear()} Priyanka Panda. Designed & Developed by Manas Kumar Gumansingh
           </p>
           <motion.button
             onClick={scrollToTop}

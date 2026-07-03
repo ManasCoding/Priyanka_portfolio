@@ -94,11 +94,11 @@ export const Contact = () => {
             </p>
 
             <div className="flex flex-col gap-4">
-              <a href="mailto:pandapriyanka151@gmail.com" className="group inline-flex items-center gap-3 text-white/60 hover:text-accent transition-colors">
+              <a href="mailto:pandapriyanka181@gmail.com" className="group inline-flex items-center gap-3 text-white/60 hover:text-accent transition-colors">
                 <div className="h-10 w-10 rounded-xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
                   <Mail size={16} className="text-accent" />
                 </div>
-                <span className="text-sm">pandapriyanka151@gmail.com</span>
+                <span className="text-sm">pandapriyanka181@gmail.com</span>
               </a>
               <a href="https://wa.me/916370459553" className="group inline-flex items-center gap-3 text-white/60 hover:text-accent transition-colors">
                 <div className="h-10 w-10 rounded-xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">

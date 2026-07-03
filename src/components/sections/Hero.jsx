@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useMotionValue, useTransform, useSpring } from "framer-motion";
 import { ArrowRight, Download, MapPin, Star, Users, Award, Coffee } from "lucide-react";
+import resumePdf from "../../assets/resume/Priyanka Resume.pdf";
+import resumeImage from "../../assets/resume/WhatsApp Image 2026-07-01 at 18.42.50.jpeg";
 
 const typingTexts = ["UI/UX Designer", "Graphic Designer", "Creative Designer", "Brand Identity Expert"];
 
@@ -21,15 +23,15 @@ const GoldParticle = ({ delay, left, top, size = 4, dur = 5 }) => (
 );
 
 // Tool icon badge component
-const ToolIcon = ({ bg, text, delay }) => (
+const ToolIcon = ({ bg, text, textCol, delay }) => (
   <motion.div
     className="h-9 w-9 rounded-lg flex items-center justify-center text-xs font-bold shadow-lg"
-    style={{ background: bg, color: text || "#fff" }}
+    style={{ background: bg, color: textCol || "#fff" }}
     initial={{ scale: 0, opacity: 0 }}
     animate={{ scale: 1, opacity: 1 }}
     transition={{ delay: 1.4 + delay * 0.1, type: "spring", stiffness: 200 }}
   >
-    {text === "Bē" ? "Bē" : text}
+    {text}
   </motion.div>
 );
 
@@ -197,8 +199,8 @@ export const Hero = () => {
                 <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
               </motion.button>
               <motion.a
-                href="/Priyanka_Panda_CV.pdf"
-                download
+                href={resumePdf}
+                download="Priyanka_Resume.pdf"
                 className="inline-flex items-center gap-2.5 rounded-full border border-white/20 bg-white/5 px-7 py-3.5 text-sm font-semibold text-white backdrop-blur-sm hover:bg-white/10 hover:border-white/30 transition-all duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.97 }}
@@ -256,9 +258,9 @@ export const Hero = () => {
                 </motion.div>
 
                 {/* Profile Image */}
-                <div className="absolute inset-2 rounded-full overflow-hidden border border-white/5">
+                <div className="absolute inset-2 rounded-full overflow-hidden border border-white/5 bg-[#111]">
                   <img
-                    src="/priyanka.png"
+                    src={resumeImage}
                     alt="Priyanka Panda - UI/UX & Graphic Designer"
                     className="h-full w-full object-cover object-center"
                   />
@@ -310,20 +312,24 @@ export const Hero = () => {
 
                 {/* Tool Icons Badge */}
                 <motion.div
-                  className="absolute -bottom-2 right-0 glass-card rounded-xl px-4 py-3 shadow-xl"
+                  className="absolute -bottom-4 right-0 md:-right-8 glass-card rounded-xl px-4 py-3 shadow-xl max-w-[220px]"
                   animate={{ y: [0, -6, 0] }}
                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                 >
-                  <div className="flex items-center gap-2">
-                    <ToolIcon bg="#1769FF" text="Bē" delay={0} />
-                    <ToolIcon bg="#0A66C2" text="in" delay={1} />
-                    <ToolIcon bg="#F24E1E" text="F" delay={2} />
-                    <ToolIcon bg="#31A8FF" text="Ps" delay={3} />
-                    <ToolIcon bg="#FF9A00" text="Ai" delay={4} />
+                  <div className="flex flex-wrap justify-center items-center gap-1.5">
+                    <ToolIcon bg="#E34F26" text="Ht" delay={0} />
+                    <ToolIcon bg="#1572B6" text="Cs" delay={1} />
+                    <ToolIcon bg="#F7DF1E" text="Js" textCol="#000" delay={2} />
+                    <ToolIcon bg="#F24E1E" text="Fg" delay={3} />
+                    <ToolIcon bg="#31A8FF" text="Ps" delay={4} />
+                    <ToolIcon bg="#21a84f" text="Cd" delay={5} />
+                    <ToolIcon bg="#00C4CC" text="Cv" delay={6} />
                   </div>
-                  <div className="text-[11px] font-medium text-accent mt-1.5 text-center">Canva & Figma ✦</div>
+                  <div className="text-[11px] font-medium text-accent mt-2 text-center leading-tight">
+                    Skills: HTML, CSS, JavaScript, Figma, Photoshop, Coreldraw, Canva ✦
+                  </div>
                 </motion.div>
               </div>
             </div>
