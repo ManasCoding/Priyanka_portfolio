@@ -15,6 +15,7 @@ import { Services } from "./components/sections/Services";
 import { Projects } from "./components/sections/Projects";
 import { Process } from "./components/sections/Process";
 import { Skills } from "./components/sections/Skills";
+import { ClientShowcase } from "./components/sections/ClientShowcase";
 import { Testimonials } from "./components/sections/Testimonials";
 import { Contact } from "./components/sections/Contact";
 
@@ -57,6 +58,7 @@ function App() {
           <div className="h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent" />
           <Skills />
           <div className="h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+          <ClientShowcase />
           <Testimonials />
           <div className="h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent" />
           <Contact />

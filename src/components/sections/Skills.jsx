@@ -8,7 +8,7 @@ import coreldrawIcon from "../../logo/Coreldraw icon.png";
 import illustratorIcon from "../../logo/Adobe illustrator icon.png";
 
 // Automatically import all created logos
-const logoModules = import.meta.glob('../../assets/created logo/*.jpeg', { eager: true, import: 'default' });
+const logoModules = import.meta.glob('../../assets/created logo/*.{png,jpg,jpeg,svg,webp}', { eager: true, import: 'default' });
 const createdLogos = Object.values(logoModules).map((src, index) => ({
   name: `Created Logo ${index + 1}`,
   category: "Graphic Design",
